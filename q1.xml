@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaskSuite>
+  <name>Hybris 5.7 trails - Part 1 - Core</name>
+  <Task>
+    <topic>Hybris extensions</topic>
+    <text>Let's assume that you wish to create a custom extension. Which file do you need to list the extension name in?</text>
+    <weight>2</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>hybris/config/local.properties</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>hybris/config/localextensions.xml</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>hybris/bin/custom/YOUREXTENSIONNAME/extensioninfo.xml</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>hybris/config/readme.txt</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Hybris extensions</topic>
+    <text>What is hybris extension? Choose the answer which you think fits best.</text>
+    <weight>1</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>A modular concept used by hybris internals</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>A modular concept used to organize custom code</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>A modular concept used to organize both hybris internal and custom code</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Hybris extensions</topic>
+    <text>What information can be put in a hybris extenstion? Choose the answer which you think fits best.</text>
+    <weight>1</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>just business logic and type definitions</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>just web application and hmc configration</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>business logic, type definitions, web application and hmc configration</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Hybris extensions</topic>
+    <text><![CDATA[What does the <code>ant extgen</code> command do?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>Builds hybris extension extgen</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Starts custome extension generation process</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>Generates external dependency report</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Hybris extensions</topic>
+    <text><![CDATA[What is <code>yempty</code> ?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[An extension template passed to <code>ant extgen</code> task to generate an empty extension]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[A command passed to <code>ant extgen</code> task to uninstall all custom extensions]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Custom extension preinstalled in hybris platform by default]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+  <topic>Hybris extensions</topic>
+  <text><![CDATA[Assume that we have an extension with the following <code>extensioninfo.xml</code>:
+    <pre>
+&lt;extensioninfo&gt;
+   &lt;extension name="abc"&gt;
+      &lt;coremodule packageroot="de.hybris.platform.cuppytrail"
+                  manager="de.hybris.platform.cuppytrail.jalo.CuppytrailManager"
+                  generated="true"
+                  /&gt;
+
+      &lt;webmodule webroot="/def" /&gt;
+   &lt;/extension&gt;
+&lt;/extensioninfo&gt;
+</pre>
+What is the URL the extension will be available through?
+    ]]></text>
+    <weight>5</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>http://localhost:9001/</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>http://localhost:9001/abc</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>http://localhost:9001/def</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>http://localhost:9001/cuppytrail</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>http://localhost:9001/coremodule</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>http://localhost:9001/webmodule</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Data models</topic>
+    <text>Where to define a custom data model?</text>
+    <weight>3</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[In extensionname/<extensionname>-items.xml]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>yes, you have to change the config in localextensions.xml</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>yes, you have to change the config in extensioninfo.xml</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>yes, you have to change the config in hybris/bin/platform/tomcat/conf/server.xml</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Data models</topic>
+    <text>What do you need to do to add a new attribute to an item type?</text>
+    <weight>2</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[Add <code>attribute</code> XML element to a corresponding <code>EXTENSIONNAME-items.xml<code> and run <code>ant all</code> to update Model java class.]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Add a field to a corresponding Model java class and run <code>ant all</code> to update <code>EXTENSIONNAME-items.xml<code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Data models</topic>
+    <text>Why do you need to run <code>ant all</code> task after updating items.xml?</text>
+    <weight>2</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[To verify that updated items.xml is wellformed and valid]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[To propagate the changes to Model java classes.]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[To connect to the database and update DB schema]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Data models</topic>
+    <text>You want to create a new item type <code>Stadium</code>. What is the correct itemtype definition.</text>
+    <weight>5</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[&lt;itemtype code="Stadium" generate="false" autocreate="false"&gt;]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[&lt;itemtype code="Stadium" generate="false" autocreate="true"&gt;]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[&lt;itemtype code="Stadium" generate="true" autocreate="false"&gt;]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[&lt;itemtype code="Stadium" generate="true" autocreate="true"&gt;]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <AnswerExplanation>
+      <![CDATA[
+      <p>
+        <code>generate="true"</code> is declared by the extension which introduces an item type.
+        All other extensions amending the item type use <code>generate="false"</code>.
+      </p>
+      <p>
+        <code>generate="true"</code> means that a Jalo class <code>Stadium</code>
+        will be generated in addition to <code>StadiumModel</code>.
+        You can generate Jalo class or you can skip generation. Both options are correct.
+      </p>
+      ]]>
+    </AnswerExplanation>
+  </Task>
+  <Task>
+    <topic>Data models</topic>
+    <text><![CDATA[Let we have the following lines in items.xml:
+    <pre>
+&lt;relations&gt;
+  &lt;relation code="StadiumMatchRelation"&gt;
+    &lt;sourceElement type="Stadium" qualifier="stadium" cardinality="one" /&gt;
+    &lt;targetElement type="Match" qualifier="matches" cardinality="many"/&gt;
+  &lt;/relation&gt;
+&lt;/relations&gt;
+    </pre>
+    How this relations will be handled on DB level?
+    ]]></text>
+    <weight>5</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>stadium</code> column will be added to <code>Matches</code> table]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>matches</code> column will be added to <code>Stadium</code> table. The column will contain a serialized list matches]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[A new table <code>StadiumMatchRelation</code> will be created. The table will have 2 columns: <code>stadium</code> and <code>match</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Data models</topic>
+    <text><![CDATA[It is possible to change a dynamic attribute value in HMC?]]></text>
+    <weight>5</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>No, never.</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>Yes, always.</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>yes, if the dynamic attribute handler supports saving</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>HMC</topic>
+    <text><![CDATA[Let we have the following lines in <code>ticketing-items.xml</code>:
+    <pre>
+&lt;itemtype code="Stadium"&gt;
+  &lt;deployment table="Stadium" typecode="10123" /&gt;
+  &lt;attributes&gt;
+      &lt;attribute qualifier="code" type="java.lang.String" &gt;
+          &lt;persistence type="property"/&gt;
+      &lt;/attribute&gt;
+  &lt;/attributes&gt;
+&lt;/itemtype&gt;
+    </pre>
+    Where shall we put a German translation for <code>code</code> attribute to be displayed in HMC?
+    ]]></text>
+    <weight>3</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>hybris/bin/platform/bootstrap/ticketing-locales_de.properties</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>hybris/config/i18n/locales_de.properties</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>ticketing/resources/localization/ticketing-locales_de.properties</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>HMC</topic>
+    <text><![CDATA[Let's assume you created a new extension and created an <code>Stadium</code> item type within it.
+      What are the required steps to customize <code>Stadium</code> look in HMC]]></text>
+    <weight>3</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[Set <code>hmc.structure.db=false</code> in <code>config/local.properties</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[Define <code><hmcmodule /></code>
+        in <code>extensioninfo.xml</code>]]>
+      </text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Add <code>EXTENSIONNAME/hmc/resources/hmc.xml</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Populating Data Model</topic>
+    <text><![CDATA[What is the essential data?]]></text>
+    <weight>3</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>
+        Essential data holds data which is common for all environment (dev, acceptance, production).
+        Generally speaking the application can't operate correctly if the essential data is not imported.
+        A good example of essential data are languages and online/staged product catalogs.
+      </text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        Essential data is used for testing on most of environments. A good example of essential data are some dummy products with some prices.
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Testing</topic>
+    <text><![CDATA[What is junit tenant?]]></text>
+    <weight>3</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>
+        This is preconfigured hybris <code>User</code> item type used to run unit and integration test.
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        This is preconfigured hybris <code>Principal</code> item type used to run unit and integration test.
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        A DB copy used to run integration tests.
+      </text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Testing</topic>
+    <text><![CDATA[How to initialize <code>junit</code> tenant so you are able to run integration tests?]]></text>
+    <weight>4</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text>
+        Using admin console Tenants tab.
+      </text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[Define <code>installed.tenants=junit</code> property in <code>project.properties</code> or <code>local.properties</code>.]]>
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[Using <code>ant yunitinit</code> command]]>
+      </text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[You do not need to initiallize <code>junit</code> tenant. Hybris comes with <code>junit</code> tenant preinitialized]]>
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Testing</topic>
+    <text><![CDATA[What is the right way to cleanup DB data created by Hybris integration tests?]]></text>
+    <weight>5</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text>
+        Implement cleanup code in some method and annotate it with @After annotation.
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[Implement cleanup code in <code>tearDown</code> method.]]>
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[You do not need to cleanup the data. Hybris removes HSQLD database files after integration test execution]]>
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[You do not need to cleanup the data. Integration tests run within a transaction which is rolled back after each test]]>
+      </text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[You do not need to cleanup the data. Hybris removes <code>junit</code> tenant after integration test execution]]>
+      </text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Architecture</topic>
+    <text><![CDATA[You want to implement a method to add a product to a cart. For example:
+<pre>
+  void addProductToCart(Integer productPk, Integer quantity){
+    // add product to cart
+    // recalculate cart quantity
+  }
+</pre>
+    What is the best place to put this code in?
+    ]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>CartDao</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>CartService</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>CartFacade</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Architecture</topic>
+    <text><![CDATA[What is the main purpose of <code>EXTENSIONNAME/resources/EXTENSIONNAME-beans.xml</code>]]></text>
+    <weight>3</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>Define DAOs</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Servicess</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Define facades</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Define DTOs</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Architecture</topic>
+    <text><![CDATA[What hybris layer is allowed to return DTO or accept a DTO as a method parameter]]></text>
+    <weight>3</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>DAO</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Service</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Facade</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Architecture</topic>
+    <text><![CDATA[What is the main benefit of defining DTOs via <code>EXTENSIONA-beans.xml</code> rather then via plain Java classes? Example:
+<pre>
+&lt;bean class="de.hybris.platform.cuppytrail.data.StadiumData"&gt;
+  <description&gt;Data object representing a Stadium</description&gt;
+  <property name="name" type="String"/&gt;
+  <property name="capacity" type="String"/&gt;
+</bean&gt;
+</pre>
+    ]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>The definition is more readable and less verbose. You do not have a bunch of boilerplate getters and setters.</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[It is easilty possible for <code>EXTENSIONB</code> to extend <code>EXTENSIONA-beans.xml</code> DTOs with new fields]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[It is possible to inject other spring beans (e.g. services or DAOs) into DTO]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Cron Jobs</topic>
+    <text><![CDATA[Which of the following statements about <code>JobPerformable</code> are true?]]></text>
+    <weight>4</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text>This interface is required to be implemented by all Hybris Jobs.</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>
+        <![CDATA[Hybris creates <code>ServicelayerJob</code> item type for every spring bean implementing <code>JobPerformable</code> during essential data update]]>
+      </text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[This an item type used to define a job to be executed]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Cron Jobs</topic>
+    <text><![CDATA[What is <code>JobModel</code>?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>This is an item type holding information about when the job must be executed.</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[This is an item type holding information about parameters to be passed to <code>JobPerformable</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[This is an item type holding information about code to be executed. E.g. it can be a a spring bean ID or a path to a groovy script.]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Cron Jobs</topic>
+    <text><![CDATA[What is the correct method signature of <code>JobPerformable</code>?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>PerformResult perform(JobModel model);</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>PerformResult perform(CronJobModel model);</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>PerformResult perform(TriggerModel model);</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>PerformResult perform(ItemModel model);</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <AnswerExplanation>
+      <![CDATA[<code>JobPerformable</code> contains business logic to be executed by jobs.
+      The business logic must accept job paramters.
+      Job parameters are stored in a <code>CronJobModel</code>]]>
+    </AnswerExplanation>
+  </Task>
+  <Task>
+    <topic>Cron Jobs</topic>
+    <text><![CDATA[What model type is used to execute scripts?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>ScriptingJobModel</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>ScriptingCronJobModel</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>ScriptingTriggerModel</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <AnswerExplanation>
+      <![CDATA[
+        <code>ScriptingJobModel.scriptURI</code> points to the script to be executed.
+        <code>ScriptingCronJobModel</code> and <code>ScriptingTriggerModel</code> do not exist.
+      ]]>
+    </AnswerExplanation>
+  </Task>
+  <Task>
+    <topic>Cockpits</topic>
+    <text>
+      <![CDATA[Let we have a customized cockpit editor area stored in
+        <code>EXTENSIONNAME/resources/EXTENSIONNAME-config/admin/editorArea_Stadium.xml</code>
+        What does <code>admin</code> path part stand for?
+      ]]></text>
+    <weight>3</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text>A user the customization will be visible for.</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>A role the customization will be visible for.</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>An extension the customization will be visible for.</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>An extension the customization will be applied to.</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Cockpits</topic>
+    <text>
+      <![CDATA[What is commerce cockpit?]]></text>
+    <weight>3</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>Allows to edit product information</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Allows to edit CMS components and pages</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>Allows to edit CMS components, pages and templates</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>It lists all the places a user can navigate to</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+
+  <Task>
+    <topic>Events and interceptors</topic>
+    <text>
+      <![CDATA[What do you need to do to implement a custom interceptor?]]></text>
+    <weight>3</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text>Add a class implementing <code>Interceptor</code></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Add an interceptor bean to the spring context. E.g.:
+<pre>
+  &lt;bean id="stadiumInterceptor" class="de.hybris.platform.cuppytrail.interceptors.StadiumCapacityInterceptor"/&gt;
+</pre>
+      ]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Connect the interceptor with the item type by defineing a mapping spring bea. E.g.:
+<pre>
+&lt;bean class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping"&gt;
+  &lt;property name="interceptor" ref="stadiumInterceptor" /&gt;
+  &lt;property name="typeCode" value="Stadium" /&gt;
+&lt;/bean&gt;
+</pre>
+      ]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Implement an event class extending <code>AbstractEvent</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Implement an event lister class extending <code>AbstractEventListener</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Register the even listener bean in the spring context]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Events and interceptors</topic>
+    <text>
+      <![CDATA[What interceptors are called during <code>modelService.save()</code> and in which order?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>ValidateInterceptor, PrepareInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>PrepareInterceptor, ValidateInterceptor</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>InitDefaultsInterceptor, PrepareInterceptor, ValidateInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Events and interceptors</topic>
+    <text>
+      <![CDATA[What interceptors are called during <code>modelService.load()</code> and in which order?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>LoadInterceptor</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>InitDefaultsInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>InitDefaultsInterceptor, LoadInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>LoadInterceptor, InitDefaultsInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Events and interceptors</topic>
+    <text>
+      <![CDATA[What interceptors are called during <code>modelService.create()</code> and in which order?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>LoadInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>InitDefaultsInterceptor</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>InitDefaultsInterceptor, LoadInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>LoadInterceptor, InitDefaultsInterceptor</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Events and interceptors</topic>
+    <text>
+      <![CDATA[Which is true about <code>ClusterAwareEvent</code>]]></text>
+    <weight>4</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>ClusterAwareEvent</code> is processed synchronously only]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>ClusterAwareEvent</code> is processed asynchronously only]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>ClusterAwareEvent</code> is processed asynchronously by default but can be configured to be processed synchronously]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>ClusterAwareEvent</code> is published to all nodes in a cluster including the node which published the event]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>ClusterAwareEvent</code> is published to all nodes in a cluster excluding the node which published the event]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Workflows</topic>
+    <text>
+      <![CDATA[Which statement describes <code>WorkflowActionTemplate</code> the best?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>It represents automated workflow actions.</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>It represents manual workflow actions.</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>It represents an option to be selected by the user during manual action step</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Workflows</topic>
+    <text>
+      <![CDATA[<code>WorkflowActionTemplate</code> can have one of the following types:]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>pending, in progress, completed</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>start, end, normal</text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text>start, end, normal, pending, in progress, completed</text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Workflows</topic>
+    <text>
+      <![CDATA[How many actions with type <code>end</code> a workflow can have?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>just one</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>zero ore one</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>zero, one or more</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Workflows</topic>
+    <text>
+      <![CDATA[When starting a workflow engine does the following:]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[Searches for a start action and puts it's status to <code>in progress</code>.
+      Finishes the workflow by putting all it's actions to <code>completed</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Searches for a start action and puts it's status to <code>in progress</code>.
+      Finishes the workflow by putting all it's actions to <code>ENDED THROUGH END OF WORKFLOW</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Searches for a start action and puts it's status to <code>in progress</code>.
+      Puts all actions to <code>pending</code> status if no start action is found.]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Searches for a start action and puts it's status to <code>in progress</code>.
+      Throws an exception if no start action is found and puts workflow status to <code>ABORTED BY EXCEPTION</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Constraints</topic>
+    <text>
+      <![CDATA[How is it possible to define a constaint on a item type?]]></text>
+    <weight>4</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[via items.xml only]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Either via items.xml or via hmc. But you can't use two approaches for the same item type simultaneously.]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Either via items.xml or via hmc. You can mix various ways to define a constraint]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Media</topic>
+    <text>
+      <![CDATA[Which of the following is true regarding <code>MediaContainer</code>?]]></text>
+    <weight>2</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[Media container is used to group images of the same product. Typically this are images with different dimensions]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Media container is like a directory used to organized medias. E.g. we may have <code>electronics</code> media container with images of a mobile phone and a laptop.]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Media</topic>
+    <text>
+      <![CDATA[What is <code>MediaConversionGroup</code>?]]></text>
+    <weight>2</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>MediaConversionGroup</code> is defined on a <code>MediaContainer</code> level to configure image formats to be generated]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>MediaConversionGroup</code> is defined on a <code>Media</code> level to configure image formats to be generated]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>MediaConversionGroup</code> is defined on a <code>Media</code> level to distinguish images for the same product but with a different size]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Webservices</topic>
+    <text>
+      <![CDATA[How to enable standard Hybris web services?]]></text>
+    <weight>2</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[Add web service support to a custom extension by running <code>ant webservice_nature</code> in the extension]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Add web service support to a custom extension by configuring
+      <code>org.springframework.ws.transport.http.MessageDispatcherServlet</code> servlet in <code>web.xml</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[Enable <code>platformwebservices</code> in <code>localextensions.xml</code> and run <code>ant all</code> to regenerate all DTOs and Resources.]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Webservices</topic>
+    <text>
+      <![CDATA[Which web service type does Hybris support out of the box?]]></text>
+    <weight>2</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>SOAP</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>REST</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>SOAP</code> and <code>REST</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>sptring-ws</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>xFire</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Webservices</topic>
+    <text>
+      <![CDATA[Which security restrictions must fulfill a user by default to access Hybris web services?]]></text>
+    <weight>2</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[have corresponding access rights for a model]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[have <code>webservicegroup</code> role]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[have <code>webservicegroup</code> role and have corresponding access rights for a model]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[must be authenticated via digest authentication]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Catalogs</topic>
+    <text>
+      <![CDATA[Which item types does <code>catalog</code> hybris extension contain?]]></text>
+    <weight>2</weight>
+    <type>MULTIPLE_CHOICE</type>
+    <Answer>
+      <text><![CDATA[<code>Catalog</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>CatalogVersion</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>Category</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>Product</code>]]></text>
+      <correct>TRUE</correct>
+    </Answer>
+    <Answer>
+      <text><![CDATA[<code>Media</code>]]></text>
+      <correct>FALSE</correct>
+    </Answer>
+  </Task>
+  <Task>
+    <topic>Catalogs</topic>
+    <text>
+      <![CDATA[Is it possible for a catalog to have this number of catalog versions?]]></text>
+    <weight>1</weight>
+    <type>SINGLE_CHOICE</type>
+    <Answer>
+      <text>one</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>two</text>
+      <correct>FALSE</correct>
+    </Answer>
+    <Answer>
+      <text>any number</text>
+      <correct>TRUE</correct>
+    </Answer>
+  </Task>
+</TaskSuite>

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Quiz tester</title>
+        <style>
+            @media print {
+                .correct {
+                    color: green;
+                }
+            }
+            li {
+                list-style: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1></h1>
+        </div>
+    </body>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url: 'q1.xml'
+            }).done(function(data) {
+                $data = $(data);
+                let $container = $(".quiz-container");
+                $container.find('h1').text($data.find('TaskSuite > name').text())
+
+                $.each($data.find('TaskSuite > Task'), function(i, task){
+                    let $task = $(task);
+                    $container.append('<h2>' + ++i + ') ' + $task.find('topic').text() + '</h2>');
+                    $container.append('<p>' + $task.find('> text').text() + '</p>');
+                    let $ul = $('<ul/>')
+                    $container.append('<ol>');
+                    let type = $task.find('type').text();
+                    $.each($task.find('Answer'), function(optionIndex, answer){
+                        $answer = $(answer);
+                        let $li = $('<li/>');
+                        $li.append('<input name="question-' + i + '" id="option-' + i + "-" + optionIndex + '" type="' + (type === 'MULTIPLE_CHOICE' ? 'checkbox' : 'radio') + '"/>');
+                        let $label = $('<label for="option-' + i + "-" + optionIndex + '"/>');
+                        $label.html($answer.find('text').text())
+                        $li.append($label);
+                        if($answer.find('correct').text() == 'TRUE'){
+                            $li.addClass('correct');
+                        }
+                        $ul.append($li);
+                    });
+                    $container.append($ul);
+                });
+            });
+        });
+    </script>
+</html>
